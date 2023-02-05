@@ -1,7 +1,8 @@
+import style from './../Modules/Navigation.module.css'
 
 function Navigation() {
   return (
-    <nav className="nav">
+    <nav className={style.nav}>
       <div>
         Profile
       </div>

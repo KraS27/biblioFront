@@ -1,0 +1,8 @@
+.profile{
+  grid-area: profile;
+  background-color: darkkhaki;
+}
+
+.profile img{
+  width: 100%;
+}

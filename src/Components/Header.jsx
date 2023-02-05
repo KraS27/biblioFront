@@ -1,7 +1,8 @@
+import style from './../Modules/Header.module.css'
 
 function Header(){
     return(
-        <header className="header">
+        <header className={style.header}>
           header        
       </header> 
     )
