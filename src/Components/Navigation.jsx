@@ -4,16 +4,16 @@ function Navigation() {
   return (
     <nav className={style.nav}>
       <div>
-        Profile
+        <a href="#" className={style.item}>Profile</a>
       </div>
       <div>
-        Messages
+       <a href="#" className={style.item}>Messages</a>
       </div>
       <div>
-        Music
+        <a href="#" className={style.item}>News</a>
       </div>
       <div>
-        Settings
+        <a href="#" className={style.item}>Settings</a>
       </div>
     </nav>
   )
