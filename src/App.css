@@ -1,3 +1,33 @@
 .app-wrapper{
   display: grid;
+  width: 1350px;
+  margin: 0 auto;
+
+  grid-template-areas: 
+  "header header"
+  "nav profile";
+
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.header{
+  grid-area: header;  
+  background-color: aqua;
+}
+
+
+.nav{
+  grid-area: nav;
+  background-color: aquamarine;
+}
+
+.profile{
+  grid-area: profile;
+  background-color: darkkhaki;
+}
+
+.profile img{
+  width: 100%;
 }
