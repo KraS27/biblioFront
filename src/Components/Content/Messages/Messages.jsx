@@ -5,6 +5,7 @@ const Messages = (props) => {
     return (
         <div>
             Messages
+            Second Message
         </div>
     );
 };
