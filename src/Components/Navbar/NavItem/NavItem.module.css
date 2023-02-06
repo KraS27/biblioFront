@@ -1,11 +1,10 @@
-
 .link{
   text-decoration: none;
   font-size: 28px;
-  color: blueviolet;
+  color: #ff80cb;
 }
 
 .active{
   text-decoration: none;
-  color: mediumvioletred;
+  color: #ff1945;
 }

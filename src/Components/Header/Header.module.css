@@ -1,4 +1,10 @@
 .header{
     grid-area: header;  
-    background-color: aqua;
-  }
+    background-color: wheat;
+}
+
+.logo{
+    text-align: center;
+    font-size: 36px;
+    font-family: "Bookman Old Style";
+}
