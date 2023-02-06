@@ -9,7 +9,7 @@
   "nav content";
 
   grid-template-rows: 80px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 2fr 12fr;
   grid-gap: 10px;
 }
 
