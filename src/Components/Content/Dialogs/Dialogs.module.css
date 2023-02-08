@@ -1,12 +1,17 @@
+h2{
+    text-align: center;
+}
+
 .dialogs{
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
 
 .chats{
-    padding: 30px;
+    padding-left: 10px;
+    text-align: center;
 }
 
 .messages{
-    padding: 10px;
+    padding-left: 20px;
 }
