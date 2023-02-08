@@ -1,0 +1,16 @@
+.postsWrapper{
+    margin: 15px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+textarea{
+    width: 100%;
+    height: 60px;
+}
+
+.existPost{
+    margin-top: 20px;
+}

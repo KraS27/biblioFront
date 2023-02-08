@@ -1,0 +1,23 @@
+.faceWrapper{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.avatarImage{
+    height: 230px;
+    width: 230px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.about{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.description{
+    font-size: 18px;
+    margin-left: 30px;
+}
