@@ -1,0 +1,12 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.chats{
+    padding: 30px;
+}
+
+.messages{
+    padding: 10px;
+}
