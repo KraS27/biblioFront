@@ -1,7 +1,10 @@
 import Post from "./Post/Post";
 import style from './MyPosts.module.css'
 
-function MyPosts() {
+function MyPosts(props) {
+
+  const refactPosts = props.myPosts.map(post => <Post message={post.text} />)
+
   return (
     <div className={style.postsWrapper}>
         <div className={style.creatPost}>
@@ -10,9 +13,7 @@ function MyPosts() {
             <button className={style.addButton}>Add</button>
         </div>
         <div className={style.existPost}>
-            <Post message='Hello' />
-            <Post message='World' />
-            <Post message='KoKo Jambo' />
+            {refactPosts}
         </div>
     </div>
   )
