@@ -5,7 +5,7 @@ import style from "./Chat.module.css"
 const Chat = (props) => {
     return (
         <div>
-            <NavLink to={"/dialogs/" + props.id} className={chat => chat.isActive ? style.chatActive : style.chat}>{props.text}</NavLink>
+            <NavLink to={"/dialogs/" + props.id} className={chat => chat.isActive ? style.chatActive : style.chat}>{props.caption}</NavLink>
         </div>
     );
 };

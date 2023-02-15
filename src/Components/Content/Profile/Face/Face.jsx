@@ -10,7 +10,7 @@ const Face = (props) => {
                      alt={'Guts'}/>
             </div>
             <div>
-                <p className={style.about}>About Me</p>
+                <h2>About Me</h2>
                 <p className={style.description}>
                     Guts, renowned as the "Black Swordsman", is a former mercenary and branded wanderer who travels the world in a constant internal struggle between pursuing his own ends and upholding his attachments to those dear to him.
 
