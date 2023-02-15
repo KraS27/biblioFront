@@ -1,9 +1,9 @@
 import './App.css'
-import Header from './Components/Header/Header'
-import Navigation from './Components/Navbar/Navigation'
-import Profile from "./Components/Content/Profile/Profile"
+import Header from './components/Header/Header'
+import Navigation from './components/Navbar/Navigation'
+import Profile from "./components/Content/Profile/Profile"
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import Dialogs from "./Components/Content/Dialogs/Dialogs";
+import Dialogs from "./components/Content/Dialogs/Dialogs";
 
 function App(props) {
   return (
@@ -14,7 +14,7 @@ function App(props) {
               <div className="app-wrapper-content">
                   <Routes>
                       <Route path='/profile' element={<Profile myPosts={props.myPosts}/>}/>
-                      <Route path='/dialogs/*' element={<Dialogs chats={props.dialogs[0]} messages={props.dialogs[1]}/>}/>
+                      <Route path='/dialogs/*' element={<Dialogs chats={props.dialogs.chats} messages={props.dialogs.messages}/>}/>
                   </Routes>
               </div>
           </div>
