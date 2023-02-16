@@ -7,7 +7,7 @@ function Profile(props) {
   return (
     <div className={style.profile}>
         <Face />
-        <MyPosts myPosts={props.myPosts}/>
+        <MyPosts myPosts={props.Posts} addPost={props.addPost}/>
     </div>
   )
 }

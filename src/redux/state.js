@@ -19,4 +19,12 @@ const state = {
         {text: 'Yu beter lose yoself inthe musik, the moment you own it'}]
 };
 
+export const addPost = (message) => {
+    debugger;
+    let newPost = {
+        text: message
+    };
+    state.posts.push(newPost);
+};
+
 export default state;
