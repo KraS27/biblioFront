@@ -13,8 +13,21 @@ function App(props) {
               <Navigation/>
               <div className="app-wrapper-content">
                   <Routes>
-                      <Route path='/profile' element={<Profile Posts={props.Posts} addPost={props.addPost}/>}/>
-                      <Route path='/dialogs/*' element={<Dialogs chats={props.dialogs.chats} messages={props.dialogs.messages}/>}/>
+                      <Route path='/profile'
+                             element={
+                                <Profile
+                                     profile={props.profile}
+                                     addPost={props.addPost}
+                                     updatePostMessage={props.updatePostMessage}
+                                />
+                      }/>
+                      <Route path='/dialogs/*'
+                             element={
+                                <Dialogs
+                                      chats={props.dialogs.chats}
+                                      messages={props.dialogs.messages}
+                                />
+                      }/>
                   </Routes>
               </div>
           </div>

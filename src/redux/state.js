@@ -1,3 +1,5 @@
+import rerenderEntireTree  from "../render";
+
 const state = {
     dialogs: {
         chats: [
@@ -12,19 +14,31 @@ const state = {
             {text: 'I like be like'},
             {text: 'TEST TSEST STAGT TSSAT'}],
     },
-    posts:[
-        {text: 'Hello'},
-        {text: 'World'},
-        {text: 'Lux Aterna'},
-        {text: 'Yu beter lose yoself inthe musik, the moment you own it'}]
+    profile:{
+        myPost: {
+            posts:[
+                {text: 'Hello'},
+                {text: 'World'},
+                {text: 'Lux Aterna'},
+                {text: 'Yu beter lose yoself inthe musik, the moment you own it'}],
+            newPostMessage: ''
+        },
+        face:{
+
+        }
+    }
 };
 
-export const addPost = (message) => {
+export const addPost = () => {
     debugger;
     let newPost = {
-        text: message
+        text: state.profile.myPost.newPostMessage
     };
-    state.posts.push(newPost);
+    state.profile.myPost.posts.push(newPost);
+    rerenderEntireTree(state, addPost, updatePostMessage);
 };
-
+export const updatePostMessage = (newMassage) => {
+    state.profile.myPost.newPostMessage = newMassage;
+    rerenderEntireTree(state, addPost, updatePostMessage);
+}
 export default state;

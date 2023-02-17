@@ -4,28 +4,24 @@ import style from './MyPosts.module.css'
 
 function MyPosts(props) {
 
-    const refactPosts = props.myPosts.map(post => <Post message={post.text} />)
+    const refactPosts = props.myPosts.posts.map(post => <Post message={post.text} />)
     const newPost = React.createRef();
 
-    const createPost = () =>{
-        debugger;
-        props.addPost(newPost.current.value);
-    }
+    const createPost = () => props.addPost();
+    const postTextChange = () => props.updatePostMessage(newPost.current.value);
 
     return (
     <div className={style.postsWrapper}>
         <div className={style.creatPost}>
             <h2>My Posts</h2>
-            <textarea ref={newPost}></textarea>
+            <textarea onChange={postTextChange} ref={newPost} value={props.myPosts.postMessage} />
             <button
                 onClick={createPost}
                 className={style.addButton}>
                 Add
             </button>
         </div>
-        <div className={style.existPost}>
-            {refactPosts}
-        </div>
+        <div className={style.existPost}> {refactPosts} </div>
     </div>
     )
 }

@@ -7,7 +7,9 @@ function Profile(props) {
   return (
     <div className={style.profile}>
         <Face />
-        <MyPosts myPosts={props.Posts} addPost={props.addPost}/>
+        <MyPosts myPosts={props.profile.myPost}
+                 addPost={props.addPost}
+                 updatePostMessage={props.updatePostMessage}/>
     </div>
   )
 }
