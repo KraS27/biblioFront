@@ -1,4 +1,6 @@
-import rerenderEntireTree  from "../render";
+let rerenderEntireTree = () =>{
+
+}
 
 const state = {
     dialogs: {
@@ -41,4 +43,9 @@ export const updatePostMessage = (newMassage) => {
     state.profile.myPost.newPostMessage = newMassage;
     rerenderEntireTree(state, addPost, updatePostMessage);
 }
+
+export const setRerender = (rerender) =>{
+    rerenderEntireTree = rerender;
+}
+
 export default state;
