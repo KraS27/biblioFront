@@ -1,22 +1,21 @@
 import React from 'react';
-import state, {addPost, updatePostMessage, setRerender} from "./redux/state";
+import store from "./redux/store";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const rerenderEntireTree  = (state, addPost, updatePostMessage) =>{
-
+const rerenderEntireTree = () =>{
     root.render(
         <App
-            dialogs={state.dialogs}
-            profile={state.profile}
-            addPost={addPost}
-            updatePostMessage={updatePostMessage}
+            dialogs={store.state.dialogs}
+            profile={store.state.profile}
+            addPost={store.addPost.bind(store)}
+            updatePostMessage={store.updatePostMessage.bind(store)}
         />
     );
 };
 
-setRerender(rerenderEntireTree);
-rerenderEntireTree (state, addPost, updatePostMessage);
+rerenderEntireTree ();
+store.setRerender(rerenderEntireTree);
 

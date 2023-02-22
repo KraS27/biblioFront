@@ -7,7 +7,10 @@ function MyPosts(props) {
     const refactPosts = props.myPosts.posts.map(post => <Post message={post.text} />)
     const newPost = React.createRef();
 
-    const createPost = () => props.addPost();
+    const createPost = () => {
+        debugger;
+        props.addPost();
+    }
     const postTextChange = () => props.updatePostMessage(newPost.current.value);
 
     return (
