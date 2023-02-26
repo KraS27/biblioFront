@@ -1,6 +1,7 @@
 import React from "react";
 import Post from "./Post/Post";
 import style from './MyPosts.module.css'
+import {addPostActionCreator, updatePostMessageActionCreator} from "../../../../redux/store";
 
 function MyPosts(props) {
 
@@ -8,9 +9,9 @@ function MyPosts(props) {
     const newPost = React.createRef();
 
     const createPost = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
-    const postTextChange = () => props.dispatch({type: 'UPDATE-POST-MESSAGE', newMessage: newPost.current.value} );
+    const postTextChange = () => props.dispatch(updatePostMessageActionCreator(newPost.current.value) );
 
     return (
     <div className={style.postsWrapper}>

@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_POST_MESSAGE = 'UPDATE-POST-MESSAGE'
+
 const store = {
     state: {
         dialogs: {
@@ -41,12 +44,20 @@ const store = {
         this.rerenderEntireTree = rerender;
     },
     dispatch(action){
-        if(action.type === 'ADD-POST'){
+        if(action.type === ADD_POST){
             this.addPost();
         }
-        else if(action.type === 'UPDATE-POST-MESSAGE'){
+        else if(action.type === UPDATE_POST_MESSAGE){
             this.updatePostMessage(action.newMessage)
         }
     }
+}
+
+export const addPostActionCreator = () =>{
+    return {type: ADD_POST}
+}
+
+export const updatePostMessageActionCreator = (newMessage) =>{
+    return {type: UPDATE_POST_MESSAGE, newMessage: newMessage}
 }
 export default store;
