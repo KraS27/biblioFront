@@ -8,10 +8,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const rerenderEntireTree = () =>{
     root.render(
         <App
-            dialogs={store.state.dialogs}
-            profile={store.state.profile}
-            addPost={store.addPost.bind(store)}
-            updatePostMessage={store.updatePostMessage.bind(store)}
+            state={store.state}
+            dispatch={store.dispatch.bind(store)}
         />
     );
 };

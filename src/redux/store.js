@@ -30,10 +30,7 @@ const store = {
     rerenderEntireTree() { },
     addPost(){
         debugger;
-        let newPost = {
-            text: this.state.profile.myPost.newPostMessage
-        };
-        this.state.profile.myPost.posts.push(newPost);
+        this.state.profile.myPost.posts.push({text: this.state.profile.myPost.newPostMessage});
         this.rerenderEntireTree();
     },
     updatePostMessage(newMassage) {
@@ -42,6 +39,14 @@ const store = {
     },
     setRerender(rerender){
         this.rerenderEntireTree = rerender;
+    },
+    dispatch(action){
+        if(action.type === 'ADD-POST'){
+            this.addPost();
+        }
+        else if(action.type === 'UPDATE-POST-MESSAGE'){
+            this.updatePostMessage(action.newMessage)
+        }
     }
 }
 export default store;

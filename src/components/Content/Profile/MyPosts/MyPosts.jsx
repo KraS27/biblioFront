@@ -8,10 +8,9 @@ function MyPosts(props) {
     const newPost = React.createRef();
 
     const createPost = () => {
-        debugger;
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
     }
-    const postTextChange = () => props.updatePostMessage(newPost.current.value);
+    const postTextChange = () => props.dispatch({type: 'UPDATE-POST-MESSAGE', newMessage: newPost.current.value} );
 
     return (
     <div className={style.postsWrapper}>
@@ -28,5 +27,4 @@ function MyPosts(props) {
     </div>
     )
 }
-
 export default MyPosts;

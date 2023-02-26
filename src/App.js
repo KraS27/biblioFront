@@ -16,16 +16,15 @@ function App(props) {
                       <Route path='/profile'
                              element={
                                 <Profile
-                                     profile={props.profile}
-                                     addPost={props.addPost}
-                                     updatePostMessage={props.updatePostMessage}
+                                     profile={props.state.profile}
+                                     dispatch={props.dispatch}
                                 />
                       }/>
                       <Route path='/dialogs/*'
                              element={
                                 <Dialogs
-                                      chats={props.dialogs.chats}
-                                      messages={props.dialogs.messages}
+                                      chats={props.state.dialogs.chats}
+                                      messages={props.state.dialogs.messages}
                                 />
                       }/>
                   </Routes>
