@@ -25,6 +25,8 @@ function App(props) {
                                 <Dialogs
                                       chats={props.state.dialogs.chats}
                                       messages={props.state.dialogs.messages}
+                                      newDialogMessage={props.state.dialogs.newDialogMessage}
+                                      dispatch={props.dispatch}
                                 />
                       }/>
                   </Routes>

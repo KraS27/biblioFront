@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
-const UPDATE_POST_MESSAGE = 'UPDATE-POST-MESSAGE'
+const UPDATE_POST_MESSAGE = 'UPDATE-POST-MESSAGE';
+const ADD_DIALOG_MESSAGE = 'ADD_DIALOG_MESSAGE';
+const UPDATE_NEW_DIALOG_MESSAGE = 'UPDATE_NEW_DIALOG_MESSAGE';
 
 const store = {
     state: {
@@ -15,6 +17,7 @@ const store = {
                 {text: 'Slava Ukraini'},
                 {text: 'I like be like'},
                 {text: 'TEST TSEST STAGT TSSAT'}],
+            newDialogMessage: ''
         },
         profile:{
             myPost: {
@@ -36,8 +39,16 @@ const store = {
         this.state.profile.myPost.posts.push({text: this.state.profile.myPost.newPostMessage});
         this.rerenderEntireTree();
     },
-    updatePostMessage(newMassage) {
-        this.state.profile.myPost.newPostMessage = newMassage;
+    addDialogMessage(){
+        this.state.dialogs.messages.push({text: this.state.dialogs.newDialogMessage});
+        this.rerenderEntireTree();
+    } ,
+    updatePostMessage(newMessage) {
+        this.state.profile.myPost.newPostMessage = newMessage;
+        this.rerenderEntireTree();
+    },
+    updateNewDialogMessage(newMessage){
+        this.state.dialogs.newDialogMessage = newMessage;
         this.rerenderEntireTree();
     },
     setRerender(rerender){
@@ -48,16 +59,28 @@ const store = {
             this.addPost();
         }
         else if(action.type === UPDATE_POST_MESSAGE){
-            this.updatePostMessage(action.newMessage)
+            this.updatePostMessage(action.newMessage);
+        }
+        else if(action.type == ADD_DIALOG_MESSAGE){
+            this.addDialogMessage();
+        }
+        else if(action.type == UPDATE_NEW_DIALOG_MESSAGE){
+            this.updateNewDialogMessage(action.newMessage);
         }
     }
 }
 
 export const addPostActionCreator = () =>{
-    return {type: ADD_POST}
+    return {type: ADD_POST};
+}
+export const updatePostMessageActionCreator = (newMessage) =>{
+    return {type: UPDATE_POST_MESSAGE, newMessage: newMessage};
+}
+export const addDialogMessageActionCreator = () =>{
+    return {type: ADD_DIALOG_MESSAGE};
 }
 
-export const updatePostMessageActionCreator = (newMessage) =>{
-    return {type: UPDATE_POST_MESSAGE, newMessage: newMessage}
+export const updateNewDialogMessageActionCreator = (newMessage) =>{
+    return {type: UPDATE_NEW_DIALOG_MESSAGE, newMessage: newMessage};
 }
 export default store;

@@ -15,15 +15,14 @@ function MyPosts(props) {
 
     return (
     <div className={style.postsWrapper}>
-        <div className={style.creatPost}>
+        <div>
             <h2>My Posts</h2>
-            <textarea onChange={postTextChange} ref={newPost} value={props.myPosts.postMessage} />
-            <button
-                onClick={createPost}
-                className={style.addButton}>
-                Add
-            </button>
+            <textarea onChange={postTextChange}
+                      ref={newPost}
+                      value={props.myPosts.postMessage}
+            />
         </div>
+        <button onClick={createPost}>Add</button>
         <div className={style.existPost}> {refactPosts} </div>
     </div>
     )
