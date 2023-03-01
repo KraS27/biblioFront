@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Dialogs from "./components/Content/Dialogs/Dialogs";
 
 function App(props) {
+    debugger;
   return (
       <BrowserRouter>
           <div className="app-wrapper">
