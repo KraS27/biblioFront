@@ -1,13 +1,13 @@
 import React from "react";
 import style from './Profile.module.css'
-import MyPosts from "./MyPosts/MyPosts";
 import Face from "./Face/Face";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 function Profile(props) {
   return (
     <div className={style.profile}>
         <Face />
-        <MyPosts myPosts={props.profile.myPost} dispatch={props.dispatch}/>
+        <MyPostsContainer store={props.store}/>
     </div>
   )
 }

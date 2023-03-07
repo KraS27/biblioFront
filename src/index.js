@@ -5,19 +5,12 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const rerenderEntireTree = (state) =>{
-    debugger;
-    root.render(
-        <App
-            state={state}
-            dispatch={store.dispatch.bind(store)}
-        />
-    );
+const rerenderEntireTree = () =>{
+    root.render( <App store={store}/>);
 };
 
-rerenderEntireTree (store.getState());
+rerenderEntireTree ();
 store.subscribe(() => {
-    let state = store.getState();
-    rerenderEntireTree(state)
+    rerenderEntireTree()
 });
 

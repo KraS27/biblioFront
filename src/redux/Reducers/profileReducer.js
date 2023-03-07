@@ -2,7 +2,7 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_POST_MESSAGE = 'UPDATE-POST-MESSAGE';
 
 const initialState = {
-    myPost: {
+    myPosts: {
         posts: [
             {text: 'Hello'},
             {text: 'World'},
@@ -19,10 +19,10 @@ const profileReducer = (state = initialState, action) => {
     debugger;
     switch (action.type) {
         case ADD_POST:
-            state.myPost.posts.push({text: state.myPost.newPostMessage});
+            state.myPosts.posts.push({text: state.myPosts.newPostMessage});
             break;
         case UPDATE_POST_MESSAGE:
-            state.myPost.newPostMessage = action.newMessage;
+            state.myPosts.newPostMessage = action.newMessage;
             break;
     }
     return state;
