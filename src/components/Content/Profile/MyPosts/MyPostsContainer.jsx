@@ -6,15 +6,10 @@ import MyPosts from "./MyPosts";
 
 function MyPostsContainer(props) {
 
-    debugger;
-
     const state = props.store.getState();
-
     const refactPosts = state.profile.myPosts.posts.map(post => <Post message={post.text} />)
 
-    const createPost = () => {
-        props.store.dispatch(addPostActionCreator());
-    }
+    const createPost = () => { props.store.dispatch(addPostActionCreator()); }
     const postTextChange = (newText) => props.store.dispatch(updatePostMessageActionCreator(newText));
 
     return (<MyPosts

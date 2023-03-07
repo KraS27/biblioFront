@@ -5,9 +5,7 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const rerenderEntireTree = () =>{
-    root.render( <App store={store}/>);
-};
+const rerenderEntireTree = () => { root.render(<App store={store}/>) };
 
 rerenderEntireTree ();
 store.subscribe(() => {
