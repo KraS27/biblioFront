@@ -32,9 +32,9 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return{
-        chats: state.chats.map(chat => <Chat caption={chat.caption} id={chat.id} />),
-        messages: state.messages.map(m => <Message text={m.text} />),
-        newDialogMessage: state.newDialogMessage
+        chats: state.dialogs.chats.map(chat => <Chat caption={chat.caption} id={chat.id} />),
+        messages: state.dialogs.messages.map(m => <Message text={m.text} />),
+        newDialogMessage: state.dialogs.newDialogMessage
     };
 }
 const mapDispatchToProps = (dispatch) => {
