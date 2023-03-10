@@ -2,7 +2,7 @@ import React from 'react';
 import style from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
-    debugger;
+
     const newMessage = React.createRef();
 
     return (
