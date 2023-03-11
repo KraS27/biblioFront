@@ -3,7 +3,7 @@ import style from './Profile.module.css'
 import Face from "./Face/Face";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-function Profile(props) {
+function Profile() {
   return (
     <div className={style.profile}>
         <Face />
