@@ -1,7 +1,6 @@
 const ADD_DIALOG_MESSAGE = 'ADD_DIALOG_MESSAGE';
 const UPDATE_NEW_DIALOG_MESSAGE = 'UPDATE_NEW_DIALOG_MESSAGE';
 
-
 let initialState = {
     chats: [
         {caption: 'Vlad', id: '1'},
@@ -19,16 +18,19 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
 
+    let stateCopy = {...state}
+
     switch (action.type){
         case ADD_DIALOG_MESSAGE:
-            state.messages.push({text: state.newDialogMessage});
+            stateCopy.messages = [...state.messages]
+            stateCopy.messages.push({text: state.newDialogMessage});
             break;
         case UPDATE_NEW_DIALOG_MESSAGE:
-            state.newDialogMessage = action.newMessage;
+            stateCopy.newDialogMessage = action.newMessage;
             break;
     }
 
-    return state;
+    return stateCopy;
 }
 
 export const addDialogMessageActionCreator = () =>{
