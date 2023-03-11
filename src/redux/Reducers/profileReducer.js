@@ -23,6 +23,7 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST:
             stateCopy.myPosts.posts = [...state.myPosts.posts]
             stateCopy.myPosts.posts.push({text: state.myPosts.newPostMessage});
+            stateCopy.myPosts.newPostMessage = '';
             break;
         case UPDATE_POST_MESSAGE:
             stateCopy.myPosts.newPostMessage = action.newMessage;

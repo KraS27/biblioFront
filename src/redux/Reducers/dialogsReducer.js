@@ -24,6 +24,7 @@ const dialogsReducer = (state = initialState, action) => {
         case ADD_DIALOG_MESSAGE:
             stateCopy.messages = [...state.messages]
             stateCopy.messages.push({text: state.newDialogMessage});
+            stateCopy.newDialogMessage = '';
             break;
         case UPDATE_NEW_DIALOG_MESSAGE:
             stateCopy.newDialogMessage = action.newMessage;
