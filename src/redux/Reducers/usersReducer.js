@@ -29,7 +29,6 @@ let initialState = {
 };
 
 const usersReducer = (state = initialState, action) => {
-
     switch (action.type){
         case FOLLOW:
             return{
@@ -56,7 +55,7 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
-export const setUsers = (users) =>{
+export const setUsersAC = (users) =>{
     return {type: SET_USERS, users: users};
 }
 export const followAC = (userId) =>{
