@@ -24,8 +24,8 @@ import {connect} from "react-redux";
 const mapStateToProps = (state) => {
     debugger;
     return {
-        posts: state.profile.myPosts.posts.map(post => <Post message={post.text} />),
-        postMessage: state.profile.myPosts.newPostMessage
+        posts: state.profilePage.myPosts.posts.map(post => <Post message={post.text} />),
+        postMessage: state.profilePage.myPosts.newPostMessage
     }
 }
 const mapDispatchToProps = (dispatch) => {

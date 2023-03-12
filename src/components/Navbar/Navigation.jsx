@@ -7,6 +7,7 @@ function Navigation() {
       <nav className={style.nav}>
           <NavItem url={"/profile"} text={"Profile"}/>
           <NavItem url={"/dialogs"} text={"Dialogs"} />
+          <NavItem url={"/users"} text={"Users"}/>
           <NavItem url={"/news"} text={"News"} />
           <NavItem url={"/settings"} text={"Settings"} />
       </nav>

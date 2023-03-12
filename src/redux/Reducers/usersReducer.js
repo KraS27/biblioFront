@@ -66,6 +66,4 @@ export const unFollowAC = (userId) =>{
     return {type: UNFOLLOW, userId: userId};
 }
 
-
-
-export default usersReducer();
+export default usersReducer;
