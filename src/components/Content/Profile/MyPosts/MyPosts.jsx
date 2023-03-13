@@ -1,7 +1,6 @@
 import React from "react";
 import style from './MyPosts.module.css'
 
-
 function MyPosts(props) {
 
     const newPost = React.createRef();

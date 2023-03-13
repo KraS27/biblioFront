@@ -1,0 +1,22 @@
+.usersWrapper{
+    display: grid;
+    grid-template-columns: 2fr 13fr;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.userData{
+    padding-top: 10px;
+    padding-left: 25px;
+    text-align: left;
+    font-size: 18px;
+}
+.followButton{
+    position: fixed;
+    margin-top: 55px;
+}

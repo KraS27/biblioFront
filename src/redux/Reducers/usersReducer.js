@@ -9,6 +9,7 @@ let initialState = {
             userName: "Koko",
             description: "I like Koko",
             location: {country: "Ukraine", city: "Zhytomir"},
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLC7Upmjq-jwWf1b--JqHP7Q3SD31AT6RJwQ&usqp=CAU",
             followed: false
         },
         {
@@ -16,6 +17,7 @@ let initialState = {
             userName: "Jambo",
             description: "I like Jambo",
             location: {country: "Ukraine", city: "Kiev"},
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLC7Upmjq-jwWf1b--JqHP7Q3SD31AT6RJwQ&usqp=CAU",
             followed: true
         },
         {
@@ -23,12 +25,14 @@ let initialState = {
             userName: "Rico",
             description: "I like Rico",
             location: {country: "Ukraine", city: "Harkiv"},
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLC7Upmjq-jwWf1b--JqHP7Q3SD31AT6RJwQ&usqp=CAU",
             followed: false
         }
     ]
 };
 
 const usersReducer = (state = initialState, action) => {
+    debugger;
     switch (action.type){
         case FOLLOW:
             return{
