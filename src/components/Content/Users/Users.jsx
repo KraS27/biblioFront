@@ -5,12 +5,7 @@ import axios  from "axios";
 
 class Users extends React.Component{
 
-    constructor(props) {
-        super(props);
-        this.getUsers();
-    }
-
-    getUsers = () => {
+    componentDidMount() {
         if(this.props.users.length === 0){
             axios.get("https://localhost:7079/User/GetUsers").then(response => {
                 debugger;
