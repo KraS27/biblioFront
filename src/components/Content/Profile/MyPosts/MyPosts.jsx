@@ -1,9 +1,11 @@
 import React from "react";
 import style from './MyPosts.module.css'
+import Post from "./Post/Post";
 
 function MyPosts(props) {
 
     const newPost = React.createRef();
+    const posts = props.posts.map(post => <Post message={post.text} />)
 
     return (
     <div className={style.postsWrapper}>
@@ -15,7 +17,7 @@ function MyPosts(props) {
             />
         </div>
         <button onClick={props.createPost}>Add</button>
-        <div className={style.existPost}> {props.posts} </div>
+        <div className={style.existPost}> {posts} </div>
     </div>
     )
 }
