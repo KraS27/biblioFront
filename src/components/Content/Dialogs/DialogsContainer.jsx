@@ -32,8 +32,8 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return{
-        chats: state.dialogsPage.chats.map(chat => <Chat caption={chat.caption} id={chat.id} />),
-        messages: state.dialogsPage.messages.map(m => <Message text={m.text} />),
+        chats: state.dialogsPage.chats,
+        messages: state.dialogsPage.messages,
         newDialogMessage: state.dialogsPage.newDialogMessage
     };
 }
