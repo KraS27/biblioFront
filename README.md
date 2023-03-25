@@ -1,2 +1,2 @@
-Simple social media like facebook.
+Social network like facebook.
 Learning react and redux
