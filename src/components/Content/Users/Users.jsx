@@ -12,7 +12,7 @@ import styles from './Users.module.css'
             pages.push(<span onClick={() => { props.onPageChanged(i) }} className={styles.pageNumber}>{i}</span>)
     }
 
-    return(
+    return (
         <div>
             <div className={styles.users}>
                 {props.users.map(user =>
