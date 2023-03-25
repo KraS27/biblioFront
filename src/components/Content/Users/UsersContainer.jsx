@@ -62,27 +62,13 @@ const mapStateToProps= (state) => {
         isFetching: state.userPage.isFetching
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return{
-        follow: (usersId) => {
-            dispatch(followAC(usersId));
-        },
-        unfollow: (usersId) => {
-            dispatch(unFollowAC(usersId));
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users));
-        },
-        setCurrentPage: (page) =>{
-            dispatch(setCurrentPageAC(page));
-        },
-        setUsersCount: (count) => {
-            dispatch(setUsersCountAC(count));
-        },
-        toogleIsFetching: (isFetching) => {
-            dispatch(toogleIsFetchingAC(isFetching));
-        }
-    };
+const mapDispatchToProps = {
+        follow: followAC,
+        unfollow: unFollowAC,
+        setUsers: setUsersAC,
+        setCurrentPage: setCurrentPageAC,
+        setUsersCount: setUsersCountAC,
+        toogleIsFetching: toogleIsFetchingAC
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
