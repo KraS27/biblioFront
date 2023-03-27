@@ -4,10 +4,10 @@ const UPDATE_POST_MESSAGE = 'UPDATE-POST-MESSAGE';
 const initialState = {
     myPosts: {
         posts: [
-            {text: 'Hello'},
-            {text: 'World'},
-            {text: 'Lux Aterna'},
-            {text: 'Yu beter lose yoself inthe musik, the moment you own it'}],
+            {id: 1, text: 'Hello'},
+            {id: 2, text: 'World'},
+            {id: 3, text: 'Lux Aterna'},
+            {id: 4, text: 'Yu beter lose yoself inthe musik, the moment you own it'}],
         newPostMessage: ''
     },
     face: {

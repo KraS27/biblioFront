@@ -6,8 +6,8 @@ import Message from "./Message/Message";
 const Dialogs = (props) => {
 
     const newMessage = React.createRef();
-    const chats = props.chats.map(chat => <Chat caption={chat.caption} id={chat.id} />)
-    const messages = props.messages.map(m => <Message text={m.text} />)
+    const chats = props.chats.map(chat => <Chat caption={chat.caption} id={chat.id} key={chat.id}/>)
+    const messages = props.messages.map(m => <Message text={m.text} key={m.id}/>)
 
 
     return (

@@ -5,7 +5,7 @@ import Post from "./Post/Post";
 function MyPosts(props) {
 
     const newPost = React.createRef();
-    const posts = props.posts.map(post => <Post message={post.text} />)
+    const posts = props.posts.map(post => <Post message={post.text} key={post.id} />)
 
     return (
     <div className={style.postsWrapper}>

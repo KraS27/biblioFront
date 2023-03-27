@@ -3,16 +3,16 @@ const UPDATE_NEW_DIALOG_MESSAGE = 'UPDATE_NEW_DIALOG_MESSAGE';
 
 let initialState = {
     chats: [
-        {caption: 'Vlad', id: '1'},
-        {caption: 'Yarik', id: '2'},
-        {caption: 'Artem', id: '3'},
-        {caption: 'Alina', id: '4'}],
+        {id: 1, caption: 'Vlad',},
+        {id: 2, caption: 'Yarik' },
+        {id: 3, caption: 'Artem' },
+        {id: 4, caption: 'Alina'}],
     messages:[
-        {text: 'Hello'},
-        {text: 'Yo-yo'},
-        {text: 'Slava Ukraini'},
-        {text: 'I like be like'},
-        {text: 'TEST TSEST STAGT TSSAT'}],
+        {id: 1, text: 'Hello'},
+        {id: 2, text: 'Yo-yo'},
+        {id: 3, text: 'Slava Ukraini'},
+        {id: 4, text: 'I like be like'},
+        {id: 5, text: 'TEST TSEST STAGT TSSAT'}],
     newDialogMessage: ''
 };
 
