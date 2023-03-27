@@ -22,10 +22,10 @@ const Dialogs = (props) => {
                 <h2>New Message</h2>
                 <textarea
                     ref={newMessage}
-                    onChange={() => {props.newMessageTextChange(newMessage.current.value)}}
+                    onChange={() => {props.updateNewDialogMessage(newMessage.current.value)}}
                     value={props.newDialogMessage}
                 />
-                <button onClick={props.sendMessage}>Send</button>
+                <button onClick={props.addDialogMessage}>Send</button>
             </div>
         </div>
     );

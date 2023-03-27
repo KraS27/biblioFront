@@ -11,12 +11,12 @@ function MyPosts(props) {
     <div className={style.postsWrapper}>
         <div>
             <h2>My Posts</h2>
-            <textarea onChange={() => {props.postTextChange(newPost.current.value)}}
+            <textarea onChange={() => {props.updatePostMessage(newPost.current.value)}}
                       ref={newPost}
                       value={props.postMessage}
             />
         </div>
-        <button onClick={props.createPost}>Add</button>
+        <button onClick={props.addPost}>Add</button>
         <div className={style.existPost}> {posts} </div>
     </div>
     )
