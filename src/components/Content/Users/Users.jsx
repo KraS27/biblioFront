@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Users.module.css'
+import {NavLink} from "react-router-dom";
 
  const Users = (props) => {
 
@@ -18,8 +19,13 @@ import styles from './Users.module.css'
                 {
                     props.users.map(user =>
                         <div className={styles.usersWrapper} key={user.id}>
-                            <img className={styles.avatar}
-                                 src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLC7Upmjq-jwWf1b--JqHP7Q3SD31AT6RJwQ&usqp=CAU"} alt="Avatar"/>
+                            
+                            <NavLink to={"/profile/" + user.id}>
+                                <img className={styles.avatar}
+                                     src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLC7Upmjq-jwWf1b--JqHP7Q3SD31AT6RJwQ&usqp=CAU"}
+                                     alt="Avatar"
+                                />
+                            </NavLink>
                             <div className={styles.userData} >
                                 <p>Name: {user.userName}</p>
                                 <p>Description: {user.description}</p>
