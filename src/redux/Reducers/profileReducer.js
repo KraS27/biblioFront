@@ -67,8 +67,8 @@ export const addPost = () =>{
 export const updatePostMessage = (newMessage) =>{
     return {type: UPDATE_POST_MESSAGE, newMessage: newMessage};
 }
-export const setProfileImg = (imgUrl) => {
-    return {type: SET_PROFILE_IMG, imgUrl: imgUrl}
+export const setProfileImg = (profileImg) => {
+    return {type: SET_PROFILE_IMG, profileImg: profileImg}
 }
 export const setProfileDescription = (description) => {
     return {type: SET_PROFILE_DESCRIPTION, description: description}

@@ -6,7 +6,7 @@ import {setProfileDescription, setProfileImg} from "../../../../redux/Reducers/p
 class FaceContainer extends React.Component{
 
     componentDidMount() {
-        axios.get('https://localhost:7079/Profile/GetProfile?userId=25')
+        axios.get('https://localhost:7079/Profile/GetProfile?userId=13')
             .then(response => {
                 debugger;
                 this.props.setProfileImg(response.data.profile.profileImg);
