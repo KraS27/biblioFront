@@ -1,9 +1,9 @@
 import React from 'react';
-import Face from "./Face";
+import ProfileInfo from "./ProfileInfo";
 import {connect} from "react-redux";
 import axios from "axios";
 import {setProfileDescription, setProfileImg} from "../../../../redux/Reducers/profileReducer";
-class FaceContainer extends React.Component{
+class ProfileInfoContainer extends React.Component{
 
     componentDidMount() {
         axios.get('https://localhost:7079/Profile/GetProfile?userId=13')
@@ -18,7 +18,7 @@ class FaceContainer extends React.Component{
     render = () => {
         debugger;
         return(
-            <Face
+            <ProfileInfo
                 profileImg={this.props.profileImg}
                 description={this.props.description}
             />
@@ -37,4 +37,4 @@ const mapDispathToProps = {
     setProfileDescription
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(FaceContainer);
+export default connect(mapStateToProps, mapDispathToProps)(ProfileInfoContainer);

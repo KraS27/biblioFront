@@ -1,13 +1,13 @@
 import React from 'react';
-import style from './Face.module.css';
+import style from './ProfileInfo.module.css';
 
-const Face = (props) => {
+const ProfileInfo = (props) => {
     return (
         <div className={style.faceWrapper}>
             <div >
                 <img className={style.avatarImage}
                      src={props.profileImg}
-                     alt={'Guts'}/>
+                     alt={'Profile Img'}/>
             </div>
             <div>
                 <h2>About Me</h2>
@@ -19,4 +19,4 @@ const Face = (props) => {
     );
 };
 
-export default Face;
+export default ProfileInfo;

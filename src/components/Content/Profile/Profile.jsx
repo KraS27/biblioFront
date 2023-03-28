@@ -1,7 +1,7 @@
 import React from "react";
 import style from './Profile.module.css'
-import MyPostsContainer from "./MyPosts/MyPostsContainer";
-import FaceContainer from "./Face/FaceContainer";
+import MyPostsContainer from "./Posts/MyPostsContainer";
+import FaceContainer from "./ProfileInfo/ProfileInfoContainer";
 
 function Profile() {
     return (
