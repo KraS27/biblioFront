@@ -19,10 +19,9 @@ import {NavLink} from "react-router-dom";
                 {
                     props.users.map(user =>
                         <div className={styles.usersWrapper} key={user.id}>
-                            
                             <NavLink to={"/profile/" + user.id}>
                                 <img className={styles.avatar}
-                                     src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLC7Upmjq-jwWf1b--JqHP7Q3SD31AT6RJwQ&usqp=CAU"}
+                                     src={user.profileImg}
                                      alt="Avatar"
                                 />
                             </NavLink>

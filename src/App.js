@@ -24,7 +24,9 @@ function App() {
                       <Route path='/users'
                              element={<UsersContainer />}
                       />
-
+                      <Route path='/profile'
+                             element={<Profile />}
+                      />
                   </Routes>
               </div>
           </div>
