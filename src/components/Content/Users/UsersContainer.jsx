@@ -12,7 +12,6 @@ import axios from "axios";
 import Preloader from "../../Common/Preloader";
 
 class UsersContainer extends React.Component {
-
     componentDidMount() {
         axios.get(`https://localhost:7079/User/GetUsers?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
             .then(response => {
@@ -69,5 +68,6 @@ const mapDispatchToProps = {
     setUsersCount,
     toogleIsFetching
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)

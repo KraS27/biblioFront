@@ -3,6 +3,7 @@ import ProfileInfo from "./ProfileInfo";
 import {connect} from "react-redux";
 import axios from "axios";
 import {setProfileDescription, setProfileImg} from "../../../../redux/Reducers/profileReducer";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 class ProfileInfoContainer extends React.Component{
 
     componentDidMount() {
@@ -14,7 +15,6 @@ class ProfileInfoContainer extends React.Component{
             }
         )
     }
-
     render = () => {
         debugger;
         return(
@@ -24,7 +24,7 @@ class ProfileInfoContainer extends React.Component{
             />
         )
     }
-};
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -37,4 +37,20 @@ const mapDispathToProps = {
     setProfileDescription
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(ProfileInfoContainer);
+const withRouter = (Component) => {
+    function ComponentWithRouterProp(props) {
+        let location = useLocation();
+        let navigate = useNavigate();
+        let params = useParams();
+        return (
+            <Component
+                {...props}
+                router={{ location, navigate, params }}
+            />
+        );
+    }
+
+    return ComponentWithRouterProp;
+}
+
+export default connect(mapStateToProps, mapDispathToProps)(withRouter(ProfileInfoContainer));
