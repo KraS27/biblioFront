@@ -7,7 +7,9 @@ import {useLocation, useNavigate, useParams} from "react-router-dom";
 class ProfileInfoContainer extends React.Component{
 
     componentDidMount() {
-        axios.get('https://localhost:7079/Profile/GetProfile?userId=13')
+        debugger;
+        const userId = this.props.router.params.userId;
+        axios.get(`https://localhost:7079/Profile/GetProfile?userId=${userId}`)
             .then(response => {
                 debugger;
                 this.props.setProfileImg(response.data.profile.profileImg);
@@ -16,7 +18,6 @@ class ProfileInfoContainer extends React.Component{
         )
     }
     render = () => {
-        debugger;
         return(
             <ProfileInfo
                 profileImg={this.props.profileImg}
@@ -36,7 +37,6 @@ const mapDispathToProps = {
     setProfileImg,
     setProfileDescription
 }
-
 const withRouter = (Component) => {
     function ComponentWithRouterProp(props) {
         let location = useLocation();
