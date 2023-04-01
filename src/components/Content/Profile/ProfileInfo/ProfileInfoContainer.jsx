@@ -12,7 +12,7 @@ class ProfileInfoContainer extends React.Component{
         if(!userId)
             userId = 13;
 
-        axios.get(`https://localhost:7079/Profile/GetProfile?userId=${userId}`)
+        axios.get(`https://localhost:7079/Profile?userId=${userId}`)
             .then(response => {
                 debugger;
                 this.props.setProfileImg(response.data.profile.profileImg);
