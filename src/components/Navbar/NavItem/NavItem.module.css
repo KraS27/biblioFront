@@ -1,10 +1,15 @@
 .link{
   text-decoration: none;
-  font-size: 28px;
-  color: #ff80cb;
+  font-size: 23px;
+  color: burlywood;
+  margin-left: 15px;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
 
 .active{
   text-decoration: none;
-  color: #ff1945;
+  color: orange;
+  margin-left: 20px;
+  font-weight: bolder;
 }

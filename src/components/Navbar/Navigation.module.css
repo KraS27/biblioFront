@@ -1,6 +1,15 @@
 .nav{
   grid-area: nav;
-  background-color: darkslateblue;
   padding: 20px;
+  background-color: slateblue;
 }
 
+.menu{
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: goldenrod;
+  font-family: "Droid Sans"
+}
