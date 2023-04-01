@@ -13,7 +13,7 @@ import Preloader from "../../Common/Preloader";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        axios.get(`https://localhost:7079/User/GetUsers?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
+        axios.get(`https://localhost:7079/Users?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsersCount(response.data.usersCount);
                 this.props.setUsers(response.data.users);
@@ -23,7 +23,7 @@ class UsersContainer extends React.Component {
     onPageChanged = (page) => {
         this.props.setCurrentPage(page);
         this.props.toogleIsFetching(true);
-        axios.get(`https://localhost:7079/User/GetUsers?page=${page}&limit=${this.props.pageSize}`)
+        axios.get(`https://localhost:7079/Users?page=${page}&limit=${this.props.pageSize}`)
             .then(response => {
                 debugger;
                 this.props.toogleIsFetching(false);

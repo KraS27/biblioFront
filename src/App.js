@@ -15,7 +15,7 @@ function App() {
               <Navigation/>
               <div className="app-wrapper-content">
                   <Routes>
-                      <Route path='/profile/:userId'
+                      <Route path='/profile/:userId?'
                              element={<Profile />}
                       />
                       <Route path='/dialogs/*'
@@ -23,9 +23,6 @@ function App() {
                       />
                       <Route path='/users'
                              element={<UsersContainer />}
-                      />
-                      <Route path='/profile'
-                             element={<Profile />}
                       />
                   </Routes>
               </div>

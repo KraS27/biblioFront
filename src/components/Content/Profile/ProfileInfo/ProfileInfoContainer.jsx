@@ -8,7 +8,10 @@ class ProfileInfoContainer extends React.Component{
 
     componentDidMount() {
         debugger;
-        const userId = this.props.router.params.userId;
+        let userId = this.props.router.params.userId;
+        if(!userId)
+            userId = 13;
+
         axios.get(`https://localhost:7079/Profile/GetProfile?userId=${userId}`)
             .then(response => {
                 debugger;

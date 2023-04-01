@@ -26,8 +26,8 @@ import {NavLink} from "react-router-dom";
                                 />
                             </NavLink>
                             <div className={styles.userData} >
-                                <p>Name: {user.userName}</p>
-                                <p>Description: {user.smallDescription}</p>
+                                <p>UserName: {user.userName}</p>
+                                <p>Location: {user.location.country} , {user.location.city}</p>
                                 {user.followed
                                     ? <button className={styles.followButton} onClick={() => { props.unfollow(user.id)}} >Unfollow</button>
                                     : <button className={styles.followButton} onClick={() => { props.follow(user.id)}} >Follow</button>
