@@ -1,12 +1,12 @@
-import React from 'react';
-import ProfileInfo from "./ProfileInfo";
+import React from "react";
+import {addPost, setProfile, updatePostMessage} from "../../../redux/Reducers/profileReducer";
 import {connect} from "react-redux";
-import axios from "axios";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
-import {setProfile} from "../../../../redux/Reducers/profileReducer";
-import Preloader from "../../../Common/Preloader";
-class ProfileInfoContainer extends React.Component{
+import axios from "axios";
+import Profile from "./Profile";
 
+
+class ProfileContainer extends React.Component{
     componentDidMount() {
         debugger;
         let userId = this.props.router.params.userId;
@@ -15,29 +15,33 @@ class ProfileInfoContainer extends React.Component{
 
         axios.get(`https://localhost:7079/Profile?userId=${userId}`)
             .then(response => {
-                debugger;
-                this.props.setProfile(response.data.profile);
+                    debugger;
+                    this.props.setProfile(response.data.profile);
             }
         )
     }
-    render = () => {
-        if(!this.props.profile)
-            return <Preloader/>
-        else
-            return <ProfileInfo
-                profile={this.props.profile}
-            />
-    }
+
+    render = () => (
+        <div>
+            <Profile profilePage={this.props}/>
+        </div>
+    )
 }
 
 const mapStateToProps = (state) => {
     return {
-        profile: state.profilePage.profileInfo
+        profile: state.profilePage.profileInfo,
+        posts: state.profilePage.myPosts.posts,
+        postMessage: state.profilePage.myPosts.newPostMessage
     }
 }
+
 const mapDispathToProps = {
-    setProfile
+    setProfile,
+    addPost,
+    updatePostMessage
 }
+
 const withRouter = (Component) => {
     function ComponentWithRouterProp(props) {
         let location = useLocation();
@@ -54,4 +58,4 @@ const withRouter = (Component) => {
     return ComponentWithRouterProp;
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(withRouter(ProfileInfoContainer));
+export default connect(mapStateToProps, mapDispathToProps)(withRouter(ProfileContainer));
