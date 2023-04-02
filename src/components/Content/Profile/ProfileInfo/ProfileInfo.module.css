@@ -9,6 +9,7 @@
     "avatar description";
 
     grid-template-columns: 2fr 10fr;
+    grid-template-rows: 250px;
 }
 
 .statusName{
