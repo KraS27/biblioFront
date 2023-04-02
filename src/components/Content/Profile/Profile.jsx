@@ -5,7 +5,7 @@ import ProfileInfoContainer from "./ProfileInfo/ProfileInfoContainer";
 
 function Profile() {
     return (
-        <div className={style.profileWrapper}>
+        <div >
             <ProfileInfoContainer/>
             <MyPostsContainer />
         </div>

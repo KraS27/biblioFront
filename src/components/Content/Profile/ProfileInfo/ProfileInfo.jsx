@@ -7,17 +7,20 @@ const ProfileInfo = (props) => {
             <div>
                 <div className={style.avatar}>
                     <img className={style.avatarImage}
-                         src={props.profileImg}
+                         src={props.profile.profileImg}
                          alt={'Profile Img'}/>
                 </div>
                 <div>
-                    <p>{}</p>
+                    <p className={style.status}>First Name: {props.profile.firstName}</p>
+                    <p className={style.status}>Last Name: {props.profile.lastName}</p>
+                    <p className={style.status}>Country: {props.profile.location.country}</p>
+                    <p className={style.status}>City: {props.profile.location.city}</p>
                 </div>
             </div>
             <div className={style.description}>
                 <h2>About Me</h2>
                 <p className={style.descriptionText}>
-                    {props.description}
+                    {props.profile.description}
                 </p>
             </div>
         </div>

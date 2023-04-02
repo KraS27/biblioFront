@@ -9,6 +9,12 @@
     "avatar description";
 
     grid-template-columns: 2fr 10fr;
+    grid-template-rows: 250px;
+}
+
+.status{
+    font-size: 22px;
+    margin-left: 20px;
 }
 
 .avatar{

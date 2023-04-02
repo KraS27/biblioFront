@@ -2,8 +2,9 @@ import React from 'react';
 import ProfileInfo from "./ProfileInfo";
 import {connect} from "react-redux";
 import axios from "axios";
-import {setProfileDescription, setProfileImg} from "../../../../redux/Reducers/profileReducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {setProfile} from "../../../../redux/Reducers/profileReducer";
+import Preloader from "../../../Common/Preloader";
 class ProfileInfoContainer extends React.Component{
 
     componentDidMount() {
@@ -15,30 +16,27 @@ class ProfileInfoContainer extends React.Component{
         axios.get(`https://localhost:7079/Profile?userId=${userId}`)
             .then(response => {
                 debugger;
-                this.props.setProfileImg(response.data.profile.profileImg);
-                this.props.setProfileDescription(response.data.profile.description);
+                this.props.setProfile(response.data.profile);
             }
         )
     }
     render = () => {
-        return(
-            <ProfileInfo
-                profileImg={this.props.profileImg}
-                description={this.props.description}
+        if(!this.props.profile)
+            return <Preloader/>
+        else
+            return <ProfileInfo
+                profile={this.props.profile}
             />
-        )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        profileImg: state.profilePage.face.profileImg,
-        description: state.profilePage.face.description
+        profile: state.profilePage.profileInfo
     }
 }
 const mapDispathToProps = {
-    setProfileImg,
-    setProfileDescription
+    setProfile
 }
 const withRouter = (Component) => {
     function ComponentWithRouterProp(props) {

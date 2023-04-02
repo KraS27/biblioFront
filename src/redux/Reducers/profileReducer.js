@@ -1,7 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_MESSAGE = 'UPDATE-POST-MESSAGE';
-const SET_PROFILE_IMG = 'SET_PROFILE_IMG';
-const SET_PROFILE_DESCRIPTION = 'SET_PROFILE_DESCRIPTION';
+const SET_PROFILE = 'SET_PROFILE';
 
 const initialState = {
     myPosts: {
@@ -12,10 +11,7 @@ const initialState = {
             {id: 4, text: 'Yu beter lose yoself inthe musik, the moment you own it'}],
         newPostMessage: ''
     },
-    face: {
-        profileImg: '',
-        description: ''
-    }
+    profileInfo: null
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -38,22 +34,10 @@ const profileReducer = (state = initialState, action) => {
                     newPostMessage: action.newMessage
                 }
             };
-        case SET_PROFILE_IMG:
-            debugger;
+        case SET_PROFILE:
             return {
                 ...state,
-                face: {
-                    ...state.face,
-                    profileImg: action.profileImg
-                }
-            };
-        case SET_PROFILE_DESCRIPTION:
-            return {
-                ...state,
-                face: {
-                    ...state.face,
-                    description: action.description
-                }
+                profileInfo: action.profile
             };
         default:
             return state;
@@ -67,12 +51,8 @@ export const addPost = () =>{
 export const updatePostMessage = (newMessage) =>{
     return {type: UPDATE_POST_MESSAGE, newMessage: newMessage};
 }
-export const setProfileImg = (profileImg) => {
-    return {type: SET_PROFILE_IMG, profileImg: profileImg}
+export const setProfile = (profile) => {
+    return {type: SET_PROFILE, profile: profile}
 }
-export const setProfileDescription = (description) => {
-    return {type: SET_PROFILE_DESCRIPTION, description: description}
-}
-
 
 export default profileReducer;
