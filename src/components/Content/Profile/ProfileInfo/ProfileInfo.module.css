@@ -9,12 +9,24 @@
     "avatar description";
 
     grid-template-columns: 2fr 10fr;
-    grid-template-rows: 250px;
 }
 
-.status{
-    font-size: 22px;
-    margin-left: 20px;
+.statusName{
+    font-size: 24px;
+    margin-left: 60px;
+    font-family: Garamond;
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-top: 5px;
+}
+
+.statusLocation{
+    font-size: 18px;
+    margin-left: 40px;
+    font-family: Garamond;
+    font-weight: bold;
+    padding-top: 0px;
+    margin-top: 2px;
 }
 
 .avatar{
@@ -28,6 +40,7 @@
     width: 230px;
     margin-top: 20px;
     margin-left: 20px;
+    margin-bottom: 2px;
 }
 
 .descriptionText{

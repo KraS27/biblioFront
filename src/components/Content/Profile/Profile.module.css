@@ -2,10 +2,8 @@
     display: grid;
 
     grid-template-areas:
-    "profileInfo"
-    "posts";
+    "status info";
 
-    grid-template-rows: 2fr 4fr;
     grid-template-columns: 10fr;
     grid-gap: 10px;
 }

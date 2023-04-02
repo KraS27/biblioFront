@@ -11,10 +11,8 @@ const ProfileInfo = (props) => {
                          alt={'Profile Img'}/>
                 </div>
                 <div>
-                    <p className={style.status}>First Name: {props.profile.firstName}</p>
-                    <p className={style.status}>Last Name: {props.profile.lastName}</p>
-                    <p className={style.status}>Country: {props.profile.location.country}</p>
-                    <p className={style.status}>City: {props.profile.location.city}</p>
+                    <p className={style.statusName}>{props.profile.firstName} {props.profile.lastName}</p>
+                    <p className={style.statusLocation}>{props.profile.location.country} • {props.profile.location.city}</p>
                 </div>
             </div>
             <div className={style.description}>
