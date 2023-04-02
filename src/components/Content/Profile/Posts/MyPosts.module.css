@@ -1,5 +1,6 @@
-.postsWrapper{
-    margin: 15px;
+.posts{
+    grid-area: posts;
+    margin-left: 270px;
 }
 
 h2{

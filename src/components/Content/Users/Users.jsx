@@ -27,7 +27,6 @@ import {NavLink} from "react-router-dom";
                             </NavLink>
                             <div className={styles.userData} >
                                 <p>UserName: {user.userName}</p>
-                                <p>Location: {user.location.country} , {user.location.city}</p>
                                 <div>
                                     <p>Status: {user.status}</p>
                                     {user.followed

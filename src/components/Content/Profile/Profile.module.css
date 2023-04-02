@@ -1,0 +1,15 @@
+.profileWrapper{
+    display: grid;
+
+    grid-template-areas:
+    "profileInfo"
+    "posts";
+
+    grid-template-rows: 2fr 4fr;
+    grid-template-columns: 10fr;
+    grid-gap: 10px;
+}
+
+.status{
+    grid-area: status;
+}
