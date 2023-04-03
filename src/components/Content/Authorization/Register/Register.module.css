@@ -13,6 +13,10 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.caption{
+    margin-left: 25%;
+}
+
 .left {
     margin: 0;
     font-size: 16px;
@@ -58,7 +62,7 @@ input[type="password"]:focus {
 }
 
 .inputSubmit {
-    margin-top: 28px;
+    margin-top: 20px;
     width: 120px;
     height: 32px;
     background: #16a085;
@@ -70,6 +74,7 @@ input[type="password"]:focus {
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer;
+    margin-left: 20%;
 }
 
 .inputSubmit:hover,

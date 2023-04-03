@@ -4,7 +4,7 @@ import styles from "./Register.module.css";
 const Register = () => {
     return (
         <div className={styles.sign && styles.left}>
-            <h1>Sign up</h1>
+            <h1 className={styles.caption}>Sign up</h1>
 
             <input className={styles.input} type="text" name="username" placeholder="Username"/>
             <input className={styles.input} type="text" name="email" placeholder="E-mail"/>
