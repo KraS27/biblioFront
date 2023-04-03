@@ -5,6 +5,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import DialogsContainer from "./components/Content/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Content/Users/UsersContainer";
 import ProfileContainer from "./components/Content/Profile/ProfileContainer";
+import Login from "./components/Content/Authorization/Login/Login";
+import Register from "./components/Content/Authorization/Register/Register";
 
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
                       />
                       <Route path='/users'
                              element={<UsersContainer />}
+                      />
+                      <Route path='/login'
+                             element={<Login />}
+                      />
+                      <Route path='/register'
+                             element={<Register />}
                       />
                   </Routes>
               </div>
