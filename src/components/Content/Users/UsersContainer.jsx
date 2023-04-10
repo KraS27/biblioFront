@@ -3,7 +3,7 @@ import Users from "./Users";
 import {connect} from "react-redux";
 import {
     follow,
-    setCurrentPage,
+    setCurrentPage, setSubscribers,
     setUsers,
     setUsersCount, toogleIsFetching,
     unFollow
@@ -13,6 +13,12 @@ import Preloader from "../../Common/Preloader";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
+        axios.get(`https://localhost:7079/users/subscribers?userId=13`)
+            .then(response => {
+                debugger;
+                this.props.setSubscribers(response.data.subscribers);
+            }
+        )
         axios.get(`https://localhost:7079/Users?page=${this.props.currentPage}&limit=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsersCount(response.data.usersCount);
@@ -42,6 +48,7 @@ class UsersContainer extends React.Component {
                            users={this.props.users}
                            unfollow={this.props.unFollow}
                            follow={this.props.follow}
+                           subscribers={this.props.subscribers}
                     />
                 }
             </div>
@@ -55,7 +62,8 @@ const mapStateToProps= (state) => {
         usersCount: state.userPage.usersCount,
         pageSize: state.userPage.pageSize,
         currentPage: state.userPage.currentPage,
-        isFetching: state.userPage.isFetching
+        isFetching: state.userPage.isFetching,
+        subscribers: state.userPage.subscribers
     }
 }
 const mapDispatchToProps = {
@@ -64,7 +72,8 @@ const mapDispatchToProps = {
     setUsers,
     setCurrentPage,
     setUsersCount,
-    toogleIsFetching
+    toogleIsFetching,
+    setSubscribers
 }
 
 
